@@ -1,0 +1,57 @@
+﻿@model DonationFinal.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Donation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonationKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationKey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonationAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Person.PersonLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Employee.EmployeeSSNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.EmployeeSSNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonationConfirmDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationConfirmDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

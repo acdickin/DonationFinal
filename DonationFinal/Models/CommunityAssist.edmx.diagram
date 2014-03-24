@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8317b721677143939c4ab1802e4c5a23" Name="Diagram1">
+        <EntityTypeShape EntityType="CommunityAssistModel.BusinessRule" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.CommunityService" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.ContactType" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.Donation" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.Employee" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.EmployeeJobTitle" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.GrantReview" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.Jobtitle" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.Person" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.PersonAddress" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.PersonContact" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.ServiceGrant" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CommunityAssistModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CommunityAssistModel.FK__ServiceGr__Servi__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__PersonCon__Conta__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__Donation__Employ__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__Donation__Person__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__Employee__Person__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__EmployeeJ__JobTi__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__ServiceGr__Emplo__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.fk_EmployeeReview" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK_EmployeeJobTitle_Jobtitle" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.fk_Grant" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__PersonAdd__Perso__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__PersonCon__Perso__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="CommunityAssistModel.FK__ServiceGr__Perso__239E4DCF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

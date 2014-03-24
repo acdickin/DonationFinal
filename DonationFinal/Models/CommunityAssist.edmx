@@ -1,0 +1,925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CommunityAssistModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CommunityAssistModelStoreContainer">
+          <EntitySet Name="BusinessRules" EntityType="CommunityAssistModel.Store.BusinessRules" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CommunityService" EntityType="CommunityAssistModel.Store.CommunityService" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContactType" EntityType="CommunityAssistModel.Store.ContactType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Donation" EntityType="CommunityAssistModel.Store.Donation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="CommunityAssistModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmployeeJobTitle" EntityType="CommunityAssistModel.Store.EmployeeJobTitle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GrantReview" EntityType="CommunityAssistModel.Store.GrantReview" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Jobtitle" EntityType="CommunityAssistModel.Store.Jobtitle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="CommunityAssistModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonAddress" EntityType="CommunityAssistModel.Store.PersonAddress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonContact" EntityType="CommunityAssistModel.Store.PersonContact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ServiceGrant" EntityType="CommunityAssistModel.Store.ServiceGrant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="CommunityAssistModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Donation__Employ__5DCAEF64" Association="CommunityAssistModel.Store.FK__Donation__Employ__5DCAEF64">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Donation" EntitySet="Donation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Donation__Person__5CD6CB2B" Association="CommunityAssistModel.Store.FK__Donation__Person__5CD6CB2B">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Donation" EntitySet="Donation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__Person__1B0907CE" Association="CommunityAssistModel.Store.FK__Employee__Person__1B0907CE">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeJ__JobTi__75A278F5" Association="CommunityAssistModel.Store.FK__EmployeeJ__JobTi__75A278F5">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeJobTitle" EntitySet="EmployeeJobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonAdd__Perso__1273C1CD" Association="CommunityAssistModel.Store.FK__PersonAdd__Perso__1273C1CD">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonAddress" EntitySet="PersonAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonCon__Conta__182C9B23" Association="CommunityAssistModel.Store.FK__PersonCon__Conta__182C9B23">
+            <End Role="ContactType" EntitySet="ContactType" />
+            <End Role="PersonContact" EntitySet="PersonContact" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonCon__Perso__173876EA" Association="CommunityAssistModel.Store.FK__PersonCon__Perso__173876EA">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonContact" EntitySet="PersonContact" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Emplo__25869641" Association="CommunityAssistModel.Store.FK__ServiceGr__Emplo__25869641">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ServiceGrant" EntitySet="ServiceGrant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Perso__239E4DCF" Association="CommunityAssistModel.Store.FK__ServiceGr__Perso__239E4DCF">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ServiceGrant" EntitySet="ServiceGrant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Servi__24927208" Association="CommunityAssistModel.Store.FK__ServiceGr__Servi__24927208">
+            <End Role="CommunityService" EntitySet="CommunityService" />
+            <End Role="ServiceGrant" EntitySet="ServiceGrant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeJobTitle_Jobtitle" Association="CommunityAssistModel.Store.FK_EmployeeJobTitle_Jobtitle">
+            <End Role="Jobtitle" EntitySet="Jobtitle" />
+            <End Role="EmployeeJobTitle" EntitySet="EmployeeJobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EmployeeReview" Association="CommunityAssistModel.Store.fk_EmployeeReview">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="GrantReview" EntitySet="GrantReview" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Grant" Association="CommunityAssistModel.Store.fk_Grant">
+            <End Role="ServiceGrant" EntitySet="ServiceGrant" />
+            <End Role="GrantReview" EntitySet="GrantReview" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BusinessRules">
+          <Key>
+            <PropertyRef Name="BusinessRuleKey" />
+          </Key>
+          <Property Name="BusinessRuleKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessRule" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CommunityService">
+          <Key>
+            <PropertyRef Name="ServiceKey" />
+          </Key>
+          <Property Name="ServiceKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceMaximum" Type="money" />
+          <Property Name="ServiceLifetimeMaximum" Type="money" />
+        </EntityType>
+        <EntityType Name="ContactType">
+          <Key>
+            <PropertyRef Name="ContactTypeKey" />
+          </Key>
+          <Property Name="ContactTypeKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactTypeName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="DonationKey" />
+          </Key>
+          <Property Name="DonationKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonationDate" Type="datetime" Nullable="false" />
+          <Property Name="DonationAmount" Type="money" Nullable="false" />
+          <Property Name="PersonKey" Type="int" />
+          <Property Name="EmployeeKey" Type="int" />
+          <Property Name="DonationConfirmDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeKey" />
+          </Key>
+          <Property Name="EmployeeKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeHireDate" Type="datetime" />
+          <Property Name="EmployeeSSNumber" Type="nvarchar" MaxLength="9" />
+          <Property Name="EmployeeDependents" Type="int" />
+          <Property Name="PersonKey" Type="int" />
+          <Property Name="EmployeeStatus" Type="nchar" MaxLength="2" />
+          <Property Name="EmployeeMonthlySalary" Type="money" />
+        </EntityType>
+        <EntityType Name="EmployeeJobTitle">
+          <Key>
+            <PropertyRef Name="EmployeeJobTitleKey" />
+          </Key>
+          <Property Name="EmployeeJobTitleKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitleKey" Type="int" />
+          <Property Name="JobTitleAssignedDate" Type="date" />
+          <Property Name="JobTitleEndDate" Type="date" />
+          <Property Name="EmployeeKey" Type="int" />
+        </EntityType>
+        <EntityType Name="GrantReview">
+          <Key>
+            <PropertyRef Name="GrantReviewNotesKey" />
+          </Key>
+          <Property Name="GrantReviewNotesKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GrantReviewDate" Type="date" />
+          <Property Name="EmployeeKey" Type="int" />
+          <Property Name="GrantKey" Type="int" />
+          <Property Name="GrantReviewNote" Type="xml" />
+        </EntityType>
+        <EntityType Name="Jobtitle">
+          <Key>
+            <PropertyRef Name="JobTitleKey" />
+          </Key>
+          <Property Name="JobTitleKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitleName" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonKey" />
+          </Key>
+          <Property Name="PersonKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonLastName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="PersonFirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="PersonUsername" Type="nvarchar" MaxLength="25" />
+          <Property Name="PersonPlainPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="Personpasskey" Type="int" />
+          <Property Name="PersonEntryDate" Type="date" />
+          <Property Name="PersonUserPassword" Type="varbinary" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PersonAddress">
+          <Key>
+            <PropertyRef Name="PersonAddressKey" />
+          </Key>
+          <Property Name="PersonAddressKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Street" Type="nvarchar" MaxLength="255" />
+          <Property Name="Apartment" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="PersonKey" Type="int" />
+        </EntityType>
+        <EntityType Name="PersonContact">
+          <Key>
+            <PropertyRef Name="ContactKey" />
+          </Key>
+          <Property Name="ContactKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactInfo" Type="nvarchar" MaxLength="255" />
+          <Property Name="PersonKey" Type="int" />
+          <Property Name="ContactTypeKey" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceGrant">
+          <Key>
+            <PropertyRef Name="GrantKey" />
+          </Key>
+          <Property Name="GrantKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GrantAmount" Type="money" />
+          <Property Name="GrantDate" Type="datetime" />
+          <Property Name="PersonKey" Type="int" />
+          <Property Name="ServiceKey" Type="int" />
+          <Property Name="EmployeeKey" Type="int" />
+          <Property Name="GrantReviewDate" Type="date" />
+          <Property Name="GrantApprovalStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="GrantNeedExplanation" Type="nvarchar(max)" />
+          <Property Name="GrantAllocation" Type="money" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK__Donation__Employ__5DCAEF64">
+          <End Role="Employee" Type="CommunityAssistModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="Donation" Type="CommunityAssistModel.Store.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Donation__Person__5CD6CB2B">
+          <End Role="Person" Type="CommunityAssistModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Donation" Type="CommunityAssistModel.Store.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__Person__1B0907CE">
+          <End Role="Person" Type="CommunityAssistModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Employee" Type="CommunityAssistModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeJ__JobTi__75A278F5">
+          <End Role="Employee" Type="CommunityAssistModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeJobTitle" Type="CommunityAssistModel.Store.EmployeeJobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="EmployeeJobTitle">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonAdd__Perso__1273C1CD">
+          <End Role="Person" Type="CommunityAssistModel.Store.Person" Multiplicity="0..1" />
+          <End Role="PersonAddress" Type="CommunityAssistModel.Store.PersonAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="PersonAddress">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonCon__Conta__182C9B23">
+          <End Role="ContactType" Type="CommunityAssistModel.Store.ContactType" Multiplicity="0..1" />
+          <End Role="PersonContact" Type="CommunityAssistModel.Store.PersonContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactType">
+              <PropertyRef Name="ContactTypeKey" />
+            </Principal>
+            <Dependent Role="PersonContact">
+              <PropertyRef Name="ContactTypeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonCon__Perso__173876EA">
+          <End Role="Person" Type="CommunityAssistModel.Store.Person" Multiplicity="0..1" />
+          <End Role="PersonContact" Type="CommunityAssistModel.Store.PersonContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="PersonContact">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Emplo__25869641">
+          <End Role="Employee" Type="CommunityAssistModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="ServiceGrant" Type="CommunityAssistModel.Store.ServiceGrant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="ServiceGrant">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Perso__239E4DCF">
+          <End Role="Person" Type="CommunityAssistModel.Store.Person" Multiplicity="0..1" />
+          <End Role="ServiceGrant" Type="CommunityAssistModel.Store.ServiceGrant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="ServiceGrant">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Servi__24927208">
+          <End Role="CommunityService" Type="CommunityAssistModel.Store.CommunityService" Multiplicity="0..1" />
+          <End Role="ServiceGrant" Type="CommunityAssistModel.Store.ServiceGrant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommunityService">
+              <PropertyRef Name="ServiceKey" />
+            </Principal>
+            <Dependent Role="ServiceGrant">
+              <PropertyRef Name="ServiceKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeJobTitle_Jobtitle">
+          <End Role="Jobtitle" Type="CommunityAssistModel.Store.Jobtitle" Multiplicity="0..1" />
+          <End Role="EmployeeJobTitle" Type="CommunityAssistModel.Store.EmployeeJobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobtitle">
+              <PropertyRef Name="JobTitleKey" />
+            </Principal>
+            <Dependent Role="EmployeeJobTitle">
+              <PropertyRef Name="JobTitleKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EmployeeReview">
+          <End Role="Employee" Type="CommunityAssistModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="GrantReview" Type="CommunityAssistModel.Store.GrantReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="GrantReview">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Grant">
+          <End Role="ServiceGrant" Type="CommunityAssistModel.Store.ServiceGrant" Multiplicity="0..1" />
+          <End Role="GrantReview" Type="CommunityAssistModel.Store.GrantReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceGrant">
+              <PropertyRef Name="GrantKey" />
+            </Principal>
+            <Dependent Role="GrantReview">
+              <PropertyRef Name="GrantKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CommunityAssistModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CommunityAssistEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BusinessRules" EntityType="CommunityAssistModel.BusinessRule" />
+          <EntitySet Name="CommunityServices" EntityType="CommunityAssistModel.CommunityService" />
+          <EntitySet Name="ContactTypes" EntityType="CommunityAssistModel.ContactType" />
+          <EntitySet Name="Donations" EntityType="CommunityAssistModel.Donation" />
+          <EntitySet Name="Employees" EntityType="CommunityAssistModel.Employee" />
+          <EntitySet Name="EmployeeJobTitles" EntityType="CommunityAssistModel.EmployeeJobTitle" />
+          <EntitySet Name="GrantReviews" EntityType="CommunityAssistModel.GrantReview" />
+          <EntitySet Name="Jobtitles" EntityType="CommunityAssistModel.Jobtitle" />
+          <EntitySet Name="People" EntityType="CommunityAssistModel.Person" />
+          <EntitySet Name="PersonAddresses" EntityType="CommunityAssistModel.PersonAddress" />
+          <EntitySet Name="PersonContacts" EntityType="CommunityAssistModel.PersonContact" />
+          <EntitySet Name="ServiceGrants" EntityType="CommunityAssistModel.ServiceGrant" />
+          <EntitySet Name="sysdiagrams" EntityType="CommunityAssistModel.sysdiagram" />
+          <AssociationSet Name="FK__ServiceGr__Servi__24927208" Association="CommunityAssistModel.FK__ServiceGr__Servi__24927208">
+            <End Role="CommunityService" EntitySet="CommunityServices" />
+            <End Role="ServiceGrant" EntitySet="ServiceGrants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonCon__Conta__182C9B23" Association="CommunityAssistModel.FK__PersonCon__Conta__182C9B23">
+            <End Role="ContactType" EntitySet="ContactTypes" />
+            <End Role="PersonContact" EntitySet="PersonContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Donation__Employ__5DCAEF64" Association="CommunityAssistModel.FK__Donation__Employ__5DCAEF64">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Donation" EntitySet="Donations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Donation__Person__5CD6CB2B" Association="CommunityAssistModel.FK__Donation__Person__5CD6CB2B">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Donation" EntitySet="Donations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__Person__1B0907CE" Association="CommunityAssistModel.FK__Employee__Person__1B0907CE">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeJ__JobTi__75A278F5" Association="CommunityAssistModel.FK__EmployeeJ__JobTi__75A278F5">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeJobTitle" EntitySet="EmployeeJobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Emplo__25869641" Association="CommunityAssistModel.FK__ServiceGr__Emplo__25869641">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="ServiceGrant" EntitySet="ServiceGrants" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EmployeeReview" Association="CommunityAssistModel.fk_EmployeeReview">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="GrantReview" EntitySet="GrantReviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeJobTitle_Jobtitle" Association="CommunityAssistModel.FK_EmployeeJobTitle_Jobtitle">
+            <End Role="Jobtitle" EntitySet="Jobtitles" />
+            <End Role="EmployeeJobTitle" EntitySet="EmployeeJobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Grant" Association="CommunityAssistModel.fk_Grant">
+            <End Role="ServiceGrant" EntitySet="ServiceGrants" />
+            <End Role="GrantReview" EntitySet="GrantReviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonAdd__Perso__1273C1CD" Association="CommunityAssistModel.FK__PersonAdd__Perso__1273C1CD">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonAddress" EntitySet="PersonAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonCon__Perso__173876EA" Association="CommunityAssistModel.FK__PersonCon__Perso__173876EA">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonContact" EntitySet="PersonContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServiceGr__Perso__239E4DCF" Association="CommunityAssistModel.FK__ServiceGr__Perso__239E4DCF">
+            <End Role="Person" EntitySet="People" />
+            <End Role="ServiceGrant" EntitySet="ServiceGrants" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BusinessRule">
+          <Key>
+            <PropertyRef Name="BusinessRuleKey" />
+          </Key>
+          <Property Name="BusinessRuleKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessRule1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CommunityService">
+          <Key>
+            <PropertyRef Name="ServiceKey" />
+          </Key>
+          <Property Name="ServiceKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceDescription" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceMaximum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ServiceLifetimeMaximum" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="ServiceGrants" Relationship="CommunityAssistModel.FK__ServiceGr__Servi__24927208" FromRole="CommunityService" ToRole="ServiceGrant" />
+        </EntityType>
+        <EntityType Name="ContactType">
+          <Key>
+            <PropertyRef Name="ContactTypeKey" />
+          </Key>
+          <Property Name="ContactTypeKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactTypeName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PersonContacts" Relationship="CommunityAssistModel.FK__PersonCon__Conta__182C9B23" FromRole="ContactType" ToRole="PersonContact" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="DonationKey" />
+          </Key>
+          <Property Name="DonationKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DonationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DonationAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PersonKey" Type="Int32" />
+          <Property Name="EmployeeKey" Type="Int32" />
+          <Property Name="DonationConfirmDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Employee" Relationship="CommunityAssistModel.FK__Donation__Employ__5DCAEF64" FromRole="Donation" ToRole="Employee" />
+          <NavigationProperty Name="Person" Relationship="CommunityAssistModel.FK__Donation__Person__5CD6CB2B" FromRole="Donation" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeKey" />
+          </Key>
+          <Property Name="EmployeeKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeHireDate" Type="DateTime" Precision="3" />
+          <Property Name="EmployeeSSNumber" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+          <Property Name="EmployeeDependents" Type="Int32" />
+          <Property Name="PersonKey" Type="Int32" />
+          <Property Name="EmployeeStatus" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="EmployeeMonthlySalary" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Donations" Relationship="CommunityAssistModel.FK__Donation__Employ__5DCAEF64" FromRole="Employee" ToRole="Donation" />
+          <NavigationProperty Name="Person" Relationship="CommunityAssistModel.FK__Employee__Person__1B0907CE" FromRole="Employee" ToRole="Person" />
+          <NavigationProperty Name="EmployeeJobTitles" Relationship="CommunityAssistModel.FK__EmployeeJ__JobTi__75A278F5" FromRole="Employee" ToRole="EmployeeJobTitle" />
+          <NavigationProperty Name="ServiceGrants" Relationship="CommunityAssistModel.FK__ServiceGr__Emplo__25869641" FromRole="Employee" ToRole="ServiceGrant" />
+          <NavigationProperty Name="GrantReviews" Relationship="CommunityAssistModel.fk_EmployeeReview" FromRole="Employee" ToRole="GrantReview" />
+        </EntityType>
+        <EntityType Name="EmployeeJobTitle">
+          <Key>
+            <PropertyRef Name="EmployeeJobTitleKey" />
+          </Key>
+          <Property Name="EmployeeJobTitleKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitleKey" Type="Int32" />
+          <Property Name="JobTitleAssignedDate" Type="DateTime" Precision="0" />
+          <Property Name="JobTitleEndDate" Type="DateTime" Precision="0" />
+          <Property Name="EmployeeKey" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="CommunityAssistModel.FK__EmployeeJ__JobTi__75A278F5" FromRole="EmployeeJobTitle" ToRole="Employee" />
+          <NavigationProperty Name="Jobtitle" Relationship="CommunityAssistModel.FK_EmployeeJobTitle_Jobtitle" FromRole="EmployeeJobTitle" ToRole="Jobtitle" />
+        </EntityType>
+        <EntityType Name="GrantReview">
+          <Key>
+            <PropertyRef Name="GrantReviewNotesKey" />
+          </Key>
+          <Property Name="GrantReviewNotesKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GrantReviewDate" Type="DateTime" Precision="0" />
+          <Property Name="EmployeeKey" Type="Int32" />
+          <Property Name="GrantKey" Type="Int32" />
+          <Property Name="GrantReviewNote" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Employee" Relationship="CommunityAssistModel.fk_EmployeeReview" FromRole="GrantReview" ToRole="Employee" />
+          <NavigationProperty Name="ServiceGrant" Relationship="CommunityAssistModel.fk_Grant" FromRole="GrantReview" ToRole="ServiceGrant" />
+        </EntityType>
+        <EntityType Name="Jobtitle">
+          <Key>
+            <PropertyRef Name="JobTitleKey" />
+          </Key>
+          <Property Name="JobTitleKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitleName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="EmployeeJobTitles" Relationship="CommunityAssistModel.FK_EmployeeJobTitle_Jobtitle" FromRole="Jobtitle" ToRole="EmployeeJobTitle" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonKey" />
+          </Key>
+          <Property Name="PersonKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonLastName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PersonFirstName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PersonUsername" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="PersonPlainPassword" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Personpasskey" Type="Int32" />
+          <Property Name="PersonEntryDate" Type="DateTime" Precision="0" />
+          <Property Name="PersonUserPassword" Type="Binary" MaxLength="500" FixedLength="false" />
+          <NavigationProperty Name="Donations" Relationship="CommunityAssistModel.FK__Donation__Person__5CD6CB2B" FromRole="Person" ToRole="Donation" />
+          <NavigationProperty Name="Employees" Relationship="CommunityAssistModel.FK__Employee__Person__1B0907CE" FromRole="Person" ToRole="Employee" />
+          <NavigationProperty Name="PersonAddresses" Relationship="CommunityAssistModel.FK__PersonAdd__Perso__1273C1CD" FromRole="Person" ToRole="PersonAddress" />
+          <NavigationProperty Name="PersonContacts" Relationship="CommunityAssistModel.FK__PersonCon__Perso__173876EA" FromRole="Person" ToRole="PersonContact" />
+          <NavigationProperty Name="ServiceGrants" Relationship="CommunityAssistModel.FK__ServiceGr__Perso__239E4DCF" FromRole="Person" ToRole="ServiceGrant" />
+        </EntityType>
+        <EntityType Name="PersonAddress">
+          <Key>
+            <PropertyRef Name="PersonAddressKey" />
+          </Key>
+          <Property Name="PersonAddressKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Street" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Apartment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="PersonKey" Type="Int32" />
+          <NavigationProperty Name="Person" Relationship="CommunityAssistModel.FK__PersonAdd__Perso__1273C1CD" FromRole="PersonAddress" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="PersonContact">
+          <Key>
+            <PropertyRef Name="ContactKey" />
+          </Key>
+          <Property Name="ContactKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactInfo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PersonKey" Type="Int32" />
+          <Property Name="ContactTypeKey" Type="Int32" />
+          <NavigationProperty Name="ContactType" Relationship="CommunityAssistModel.FK__PersonCon__Conta__182C9B23" FromRole="PersonContact" ToRole="ContactType" />
+          <NavigationProperty Name="Person" Relationship="CommunityAssistModel.FK__PersonCon__Perso__173876EA" FromRole="PersonContact" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="ServiceGrant">
+          <Key>
+            <PropertyRef Name="GrantKey" />
+          </Key>
+          <Property Name="GrantKey" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GrantAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="GrantDate" Type="DateTime" Precision="3" />
+          <Property Name="PersonKey" Type="Int32" />
+          <Property Name="ServiceKey" Type="Int32" />
+          <Property Name="EmployeeKey" Type="Int32" />
+          <Property Name="GrantReviewDate" Type="DateTime" Precision="0" />
+          <Property Name="GrantApprovalStatus" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="GrantNeedExplanation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="GrantAllocation" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="CommunityService" Relationship="CommunityAssistModel.FK__ServiceGr__Servi__24927208" FromRole="ServiceGrant" ToRole="CommunityService" />
+          <NavigationProperty Name="Employee" Relationship="CommunityAssistModel.FK__ServiceGr__Emplo__25869641" FromRole="ServiceGrant" ToRole="Employee" />
+          <NavigationProperty Name="GrantReviews" Relationship="CommunityAssistModel.fk_Grant" FromRole="ServiceGrant" ToRole="GrantReview" />
+          <NavigationProperty Name="Person" Relationship="CommunityAssistModel.FK__ServiceGr__Perso__239E4DCF" FromRole="ServiceGrant" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__ServiceGr__Servi__24927208">
+          <End Role="CommunityService" Type="CommunityAssistModel.CommunityService" Multiplicity="0..1" />
+          <End Role="ServiceGrant" Type="CommunityAssistModel.ServiceGrant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommunityService">
+              <PropertyRef Name="ServiceKey" />
+            </Principal>
+            <Dependent Role="ServiceGrant">
+              <PropertyRef Name="ServiceKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonCon__Conta__182C9B23">
+          <End Role="ContactType" Type="CommunityAssistModel.ContactType" Multiplicity="0..1" />
+          <End Role="PersonContact" Type="CommunityAssistModel.PersonContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactType">
+              <PropertyRef Name="ContactTypeKey" />
+            </Principal>
+            <Dependent Role="PersonContact">
+              <PropertyRef Name="ContactTypeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Donation__Employ__5DCAEF64">
+          <End Role="Employee" Type="CommunityAssistModel.Employee" Multiplicity="0..1" />
+          <End Role="Donation" Type="CommunityAssistModel.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Donation__Person__5CD6CB2B">
+          <End Role="Person" Type="CommunityAssistModel.Person" Multiplicity="0..1" />
+          <End Role="Donation" Type="CommunityAssistModel.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__Person__1B0907CE">
+          <End Role="Person" Type="CommunityAssistModel.Person" Multiplicity="0..1" />
+          <End Role="Employee" Type="CommunityAssistModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeJ__JobTi__75A278F5">
+          <End Role="Employee" Type="CommunityAssistModel.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeJobTitle" Type="CommunityAssistModel.EmployeeJobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="EmployeeJobTitle">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Emplo__25869641">
+          <End Role="Employee" Type="CommunityAssistModel.Employee" Multiplicity="0..1" />
+          <End Role="ServiceGrant" Type="CommunityAssistModel.ServiceGrant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="ServiceGrant">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EmployeeReview">
+          <End Role="Employee" Type="CommunityAssistModel.Employee" Multiplicity="0..1" />
+          <End Role="GrantReview" Type="CommunityAssistModel.GrantReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeKey" />
+            </Principal>
+            <Dependent Role="GrantReview">
+              <PropertyRef Name="EmployeeKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeJobTitle_Jobtitle">
+          <End Role="Jobtitle" Type="CommunityAssistModel.Jobtitle" Multiplicity="0..1" />
+          <End Role="EmployeeJobTitle" Type="CommunityAssistModel.EmployeeJobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobtitle">
+              <PropertyRef Name="JobTitleKey" />
+            </Principal>
+            <Dependent Role="EmployeeJobTitle">
+              <PropertyRef Name="JobTitleKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Grant">
+          <End Role="ServiceGrant" Type="CommunityAssistModel.ServiceGrant" Multiplicity="0..1" />
+          <End Role="GrantReview" Type="CommunityAssistModel.GrantReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceGrant">
+              <PropertyRef Name="GrantKey" />
+            </Principal>
+            <Dependent Role="GrantReview">
+              <PropertyRef Name="GrantKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonAdd__Perso__1273C1CD">
+          <End Role="Person" Type="CommunityAssistModel.Person" Multiplicity="0..1" />
+          <End Role="PersonAddress" Type="CommunityAssistModel.PersonAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="PersonAddress">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonCon__Perso__173876EA">
+          <End Role="Person" Type="CommunityAssistModel.Person" Multiplicity="0..1" />
+          <End Role="PersonContact" Type="CommunityAssistModel.PersonContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="PersonContact">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServiceGr__Perso__239E4DCF">
+          <End Role="Person" Type="CommunityAssistModel.Person" Multiplicity="0..1" />
+          <End Role="ServiceGrant" Type="CommunityAssistModel.ServiceGrant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonKey" />
+            </Principal>
+            <Dependent Role="ServiceGrant">
+              <PropertyRef Name="PersonKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CommunityAssistModelStoreContainer" CdmEntityContainer="CommunityAssistEntities">
+          <EntitySetMapping Name="BusinessRules">
+            <EntityTypeMapping TypeName="CommunityAssistModel.BusinessRule">
+              <MappingFragment StoreEntitySet="BusinessRules">
+                <ScalarProperty Name="BusinessRuleKey" ColumnName="BusinessRuleKey" />
+                <ScalarProperty Name="BusinessRule1" ColumnName="BusinessRule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommunityServices">
+            <EntityTypeMapping TypeName="CommunityAssistModel.CommunityService">
+              <MappingFragment StoreEntitySet="CommunityService">
+                <ScalarProperty Name="ServiceKey" ColumnName="ServiceKey" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+                <ScalarProperty Name="ServiceMaximum" ColumnName="ServiceMaximum" />
+                <ScalarProperty Name="ServiceLifetimeMaximum" ColumnName="ServiceLifetimeMaximum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactTypes">
+            <EntityTypeMapping TypeName="CommunityAssistModel.ContactType">
+              <MappingFragment StoreEntitySet="ContactType">
+                <ScalarProperty Name="ContactTypeKey" ColumnName="ContactTypeKey" />
+                <ScalarProperty Name="ContactTypeName" ColumnName="ContactTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donations">
+            <EntityTypeMapping TypeName="CommunityAssistModel.Donation">
+              <MappingFragment StoreEntitySet="Donation">
+                <ScalarProperty Name="DonationKey" ColumnName="DonationKey" />
+                <ScalarProperty Name="DonationDate" ColumnName="DonationDate" />
+                <ScalarProperty Name="DonationAmount" ColumnName="DonationAmount" />
+                <ScalarProperty Name="PersonKey" ColumnName="PersonKey" />
+                <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+                <ScalarProperty Name="DonationConfirmDate" ColumnName="DonationConfirmDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="CommunityAssistModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+                <ScalarProperty Name="EmployeeHireDate" ColumnName="EmployeeHireDate" />
+                <ScalarProperty Name="EmployeeSSNumber" ColumnName="EmployeeSSNumber" />
+                <ScalarProperty Name="EmployeeDependents" ColumnName="EmployeeDependents" />
+                <ScalarProperty Name="PersonKey" ColumnName="PersonKey" />
+                <ScalarProperty Name="EmployeeStatus" ColumnName="EmployeeStatus" />
+                <ScalarProperty Name="EmployeeMonthlySalary" ColumnName="EmployeeMonthlySalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeJobTitles">
+            <EntityTypeMapping TypeName="CommunityAssistModel.EmployeeJobTitle">
+              <MappingFragment StoreEntitySet="EmployeeJobTitle">
+                <ScalarProperty Name="EmployeeJobTitleKey" ColumnName="EmployeeJobTitleKey" />
+                <ScalarProperty Name="JobTitleKey" ColumnName="JobTitleKey" />
+                <ScalarProperty Name="JobTitleAssignedDate" ColumnName="JobTitleAssignedDate" />
+                <ScalarProperty Name="JobTitleEndDate" ColumnName="JobTitleEndDate" />
+                <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrantReviews">
+            <EntityTypeMapping TypeName="CommunityAssistModel.GrantReview">
+              <MappingFragment StoreEntitySet="GrantReview">
+                <ScalarProperty Name="GrantReviewNotesKey" ColumnName="GrantReviewNotesKey" />
+                <ScalarProperty Name="GrantReviewDate" ColumnName="GrantReviewDate" />
+                <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+                <ScalarProperty Name="GrantKey" ColumnName="GrantKey" />
+                <ScalarProperty Name="GrantReviewNote" ColumnName="GrantReviewNote" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobtitles">
+            <EntityTypeMapping TypeName="CommunityAssistModel.Jobtitle">
+              <MappingFragment StoreEntitySet="Jobtitle">
+                <ScalarProperty Name="JobTitleKey" ColumnName="JobTitleKey" />
+                <ScalarProperty Name="JobTitleName" ColumnName="JobTitleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="CommunityAssistModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="PersonKey" ColumnName="PersonKey" />
+                <ScalarProperty Name="PersonLastName" ColumnName="PersonLastName" />
+                <ScalarProperty Name="PersonFirstName" ColumnName="PersonFirstName" />
+                <ScalarProperty Name="PersonUsername" ColumnName="PersonUsername" />
+                <ScalarProperty Name="PersonPlainPassword" ColumnName="PersonPlainPassword" />
+                <ScalarProperty Name="Personpasskey" ColumnName="Personpasskey" />
+                <ScalarProperty Name="PersonEntryDate" ColumnName="PersonEntryDate" />
+                <ScalarProperty Name="PersonUserPassword" ColumnName="PersonUserPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonAddresses">
+            <EntityTypeMapping TypeName="CommunityAssistModel.PersonAddress">
+              <MappingFragment StoreEntitySet="PersonAddress">
+                <ScalarProperty Name="PersonAddressKey" ColumnName="PersonAddressKey" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="PersonKey" ColumnName="PersonKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonContacts">
+            <EntityTypeMapping TypeName="CommunityAssistModel.PersonContact">
+              <MappingFragment StoreEntitySet="PersonContact">
+                <ScalarProperty Name="ContactKey" ColumnName="ContactKey" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="PersonKey" ColumnName="PersonKey" />
+                <ScalarProperty Name="ContactTypeKey" ColumnName="ContactTypeKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceGrants">
+            <EntityTypeMapping TypeName="CommunityAssistModel.ServiceGrant">
+              <MappingFragment StoreEntitySet="ServiceGrant">
+                <ScalarProperty Name="GrantKey" ColumnName="GrantKey" />
+                <ScalarProperty Name="GrantAmount" ColumnName="GrantAmount" />
+                <ScalarProperty Name="GrantDate" ColumnName="GrantDate" />
+                <ScalarProperty Name="PersonKey" ColumnName="PersonKey" />
+                <ScalarProperty Name="ServiceKey" ColumnName="ServiceKey" />
+                <ScalarProperty Name="EmployeeKey" ColumnName="EmployeeKey" />
+                <ScalarProperty Name="GrantReviewDate" ColumnName="GrantReviewDate" />
+                <ScalarProperty Name="GrantApprovalStatus" ColumnName="GrantApprovalStatus" />
+                <ScalarProperty Name="GrantNeedExplanation" ColumnName="GrantNeedExplanation" />
+                <ScalarProperty Name="GrantAllocation" ColumnName="GrantAllocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CommunityAssistModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
